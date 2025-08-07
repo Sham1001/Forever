@@ -40,17 +40,21 @@ const Cart = () => {
           const productData = products.find(product=>items.id === product._id)
           return(
             
-              <div key={index} className='flex justify-between p-4 border-t border-b text-gray-700 grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4'>
-                <div className='flex items-start gap-6'>
+              <div key={index} className='flex justify-between p-4 border-t border-b text-gray-300 grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4'>
+                <div className='items-start gap-6'>
                   <img className='w-16 sm:w-20' src={productData.image[0]} alt="Product_img" />
                 </div>
-                <p className='text-xs sm:text-lg font-medium'>{productData.name}</p>
+               
+                
+                    <p className='text-xs sm:text-lg font-medium text-gray-900'>{productData.name}</p>
+                
                 <div className='flex items-center gap-5 mt-2'>
-                  <p>{curreny}{productData.price}</p>
-                  <p className='px-2 sm:px-3 sm:py-1 border bg-slate-50'>{items.size}</p>
+                  <p className='text-gray-900'>{curreny}{productData.price}</p>
+                  <p className='text-gray-900 px-2 sm:px-3 sm:py-1 border bg-slate-50'>{items.size}</p>
                 </div>
+               
                 {/*The value from input filled are always in string so we have to change the value to the formate that we need or if we need strong only then we dont need to do anything . */}
-                <input className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' type="number" min={1} onChange={(e)=> e.target.value === '' || e.target.value === '0' ? null : updateCartInfo(items.id,items.size,Number(e.target.value))} defaultValue={items.quantity} />
+                <input className='text-gray-900 border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1' type="number" min={1} onChange={(e)=> e.target.value === '' || e.target.value === '0' ? null : updateCartInfo(items.id,items.size,Number(e.target.value))} defaultValue={items.quantity} />
                <img onClick={()=>updateCartInfo(items.id,items.size,0)} className='w-7 cursor-pointer' src={assets.bin_icon} alt='Delete_button' />
               </div>
   
@@ -60,6 +64,11 @@ const Cart = () => {
       }
      </div>
      <CartTotal/>
+     <div className='w-[20%] h-10 bg-black text-white text-center justify-center flex mt-5 relative left-[80%] mb-40'>
+        <button className='active:bg-gray-700 w-full '>
+            Proceed To Check Out
+        </button>
+     </div>
     </div>
   )
 }

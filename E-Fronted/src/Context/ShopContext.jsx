@@ -85,7 +85,7 @@ export const ContextProvider = ({children})=>{
     
 
     const curreny = '$'
-    const delivery_fee ='10'
+    const delivery_fee =10
 
     const value={
         products,

@@ -8,7 +8,7 @@ const CartTotal = () => {
   const {products, cartItems, curreny, updateCartInfo, getCartAmount,delivery_fee} = useContext(ShopContext)
   
   return (
-    <div className=' w-[29%] relative left-[71%] mt-7 '>
+    <div className=' w-[39%] relative left-[61%] mt-20 '>
           <div>
           <Title text1={'Cart'} text2={'Total'}/>
           </div>
@@ -17,20 +17,16 @@ const CartTotal = () => {
           <p>{curreny}{getCartAmount()}.00</p>
           </div>
           <hr className='text-gray-300' />
-          <div className='flex justify-between mt-2'>
+          <div className='flex justify-between mt-3 '>
           <p>Shipping Fee</p>
-          <p>{curreny}{delivery_fee}</p>
+          <p>{curreny}{delivery_fee}.00</p>
           </div>
           <hr className='text-gray-300' />
-          <div className='flex justify-between mt-2'>
+          <div className='flex justify-between mt-3 text-center'>
           <b>Total</b>
-          <p>{curreny}{getCartAmount() === 0 ? 0 : getCartAmount() + delivery_fee} </p>
+          <b>{curreny}{getCartAmount() === 0 ? 0 : getCartAmount() + delivery_fee}.00 </b>
           </div>
-          <div className='w-[54%] h-10 bg-black text-white text-center justify-center flex mt-5 relative left-[46%]'>
-            <button>
-              Proceed To Check Out
-            </button>
-          </div>
+          
          </div>
   )
 }
