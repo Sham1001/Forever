@@ -6,7 +6,7 @@ import CartTotal from '../Component/CartTotal.jsx'
 
 const Cart = () => {
 
-  const {products, cartItems, curreny, updateCartInfo, getCartAmount,delivery_fee} = useContext(ShopContext)
+  const {products, cartItems, curreny, updateCartInfo, getCartAmount,delivery_fee, navigate} = useContext(ShopContext)
 
   const [cartData, setChartData] =  useState([])
 
@@ -63,9 +63,11 @@ const Cart = () => {
         })
       }
      </div>
+     <div className='relative sm:left-[63%] mt-10 '>
      <CartTotal/>
+     </div>
      <div className='w-[20%] h-10 bg-black text-white text-center justify-center flex mt-5 relative left-[80%] mb-40'>
-        <button className='active:bg-gray-700 w-full '>
+        <button onClick={()=>navigate('/placeorder')} className='active:bg-gray-700 w-full '>
             Proceed To Check Out
         </button>
      </div>
