@@ -17,20 +17,20 @@ const PlaceOrder = () => {
       </div>
      
       <div className='flex gap-3'>
-        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='First Name' />
-        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Last Name' />
+        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='First Name' required/>
+        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Last Name' required/>
       </div>
-      <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="email" placeholder='Email Address' />
-      <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Street' />
+      <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="email" placeholder='Email Address' required/>
+      <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Street' required/>
       <div className='flex gap-2'>
-        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='City' />
-        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='State' />
+        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='City' required/>
+        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='State' required/>
       </div>
       <div className='flex gap-2'>
-        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="number" placeholder='Zipcode' />
-        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Country' />
+        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="number" placeholder='Zipcode' required/>
+        <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='Country' required/>
       </div>
-      <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="number" placeholder='Phone' />
+      <input className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="number" placeholder='Phone' required/>
       
       </div>
       <div className='mt-8'>
