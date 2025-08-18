@@ -57,7 +57,7 @@ const productAdd = async(req,res)=>{
 
 const productRemove = async(req,res)=>{
     try{
-        await productModels.findByIdAndDelete(req.body.id)
+        await productModels.findByIdAndDelete(req.body._id)
         res.json({success:true, message:"Product deleted successfully"})
     }
     catch(error){
