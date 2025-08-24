@@ -1,13 +1,55 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Title from '../Component/Title.jsx'
+import { ShopContext } from '../Context/ShopContext.jsx'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const Login = () => {
 
+  const {backendUrl,token,setToken,navigate}  = useContext(ShopContext)
   const [currentState, setCurrentState] = useState('Login')
+  const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
+  const [password,setPassword] = useState('')
   
-  const handleSubmit = (e)=>{
-      e.preventDefault()
+  const handleSubmit = async(e)=>{
+      try{
+        e.preventDefault()
+      if(currentState === 'Sign Up'){
+        const  response = await axios.post(backendUrl+'/api/user/register',{name,email,password})
+        // console.log(response)
+        if(response.data.success){
+         
+          setToken(response.data.token)
+          localStorage.setItem('token',response.data.token)
+          toast.success("Register successfully")
+        }
+        else{
+          toast.error(response.data.message)
+        }
+      }
+      else{
+        const response = await axios.post(backendUrl + '/api/user/login', {email,password})
+        if(response.data.success){
+          setToken(response.data.token)
+          localStorage.setItem('token',response.data.token)
+        }
+        else{
+          toast.error(response.data.message)
+        }
+      }
+      }
+      catch(error){
+        console.log(error)
+        toast.error(error.message)
+      }
   }
+
+  useEffect(()=>{
+      if(token){
+        navigate('/')
+      }
+  },[token])
   
   return (
     <div className="h-screen flex justify-center items-center">
@@ -19,9 +61,9 @@ const Login = () => {
         </div>
         <div className='flex flex-col gap-2'>
         <div className='flex flex-col gap-4'>
-           {currentState === 'Sign Up' ? <input className='border py-2 px-2' type="text" placeholder='Name' required/> : ''}
-          <input className='border py-2 px-2' type="email" placeholder='Email Address' required/>
-          <input className='border py-2 px-2' type="password" placeholder='Password' required/>
+           {currentState === 'Sign Up' ? <input onChange={(e)=>setName(e.target.value)} value={name} className='border py-2 px-2' type="text" placeholder='Name' required/> : ''}
+          <input onChange={(e)=>setEmail(e.target.value)} value={email} className='border py-2 px-2' type="email" placeholder='Email Address' required/>
+          <input onChange={(e)=>setPassword(e.target.value)} value={password} className='border py-2 px-2' type="password" placeholder='Password' required/>
         </div>
           <div className='flex justify-between'>
             <p className='cursor-pointer'>Forget your Password?</p>

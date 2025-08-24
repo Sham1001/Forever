@@ -27,7 +27,7 @@ const fetchProduct=()=>{
 
 useEffect(()=>{
     fetchProduct()
-},[productId])
+},[productId,products])
 
 
   return productData ? (

@@ -79,7 +79,7 @@ const List = ({ token }) => {
             <div className='col-span-2 md:col-span-1 flex justify-end'>
               <p
                 onClick={() => removeItem(items._id)}
-                className='cursor-pointer text-lg text-red-600 hover:scale-110 transition'
+                className='cursor-pointer text-lg text-center sm:mr-17 text-red-600 hover:scale-110 transition'
               >
                 X
               </p>

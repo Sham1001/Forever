@@ -9,7 +9,16 @@ const Navbar = () => {
 
     const [active , setActive] = useState(false)
 
-    const {showSearch,setShowSearch,getCartCount} = useContext(ShopContext)
+    const {showSearch,setShowSearch,token,setToken,getCartCount,setCartItems,navigate} = useContext(ShopContext)
+
+    const logout = ()=>{
+        navigate('/login')
+        localStorage.removeItem('token')
+        setToken('') 
+        setCartItems({})
+       
+
+    }
   return (
     <div>
     <nav className='flex justify-between py-6 items-center font-medium '>
@@ -46,15 +55,21 @@ const Navbar = () => {
        <img onClick={()=> setShowSearch(prev=>!prev)} className='w-5'src={assets.search_icon} alt="search_icon" />
        </Link>
          <div className='group relative '>
-           <Link to='/login'><img  className='w-5' src={assets.profile_icon} alt="" /></Link>
-           <div className='group-hover:block hidden right-0 pt-4 absolute dropdown-menu'>
-                <div className='flex flex-col gap-2 py-3 w-36 bg-slate-100 text-gray-500 rounded'>
-                    <p className='cursor-pointer hover:text-black'>My Profile</p>
-                    <p className='cursor-pointer hover:text-black'>My Order</p>
-                    <p className='cursor-pointer hover:text-black'>Logout</p>
+           <img onClick={()=>{token ? null : navigate('/login')}}  className='w-5' src={assets.profile_icon} alt="" />
+           
+                    {
+                        token &&
+                        
+                        <div className='group-hover:block hidden right-0 pt-4 absolute dropdown-menu'>
+                        <div className='flex flex-col gap-2 py-3 w-36 bg-slate-100 text-gray-500 rounded'>
+                        <p  className='cursor-pointer hover:text-black'>My Profile</p>
+                        <p onClick={()=>navigate('/order')} className='cursor-pointer hover:text-black'>My Order</p>
+                        <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
+                        </div>
+                        </div>
+                    }
 
-                </div>
-           </div>
+                
          </div>
          <Link to='/cart' className='relative'>
             <img className='w-5 min-w-5 cursor-pointer' src={assets.cart_icon} alt="cart_icon" />

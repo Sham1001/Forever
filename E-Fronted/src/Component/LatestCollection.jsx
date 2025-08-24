@@ -12,7 +12,7 @@ const LatestCollection = () => {
 
     useEffect(() => {
       setProductInfo(products.slice(0,10))
-    }, [])
+    }, [products])
     console.log(`the product info is :${productInfo}`)
   return (
     <div className='py-10 flex flex-col gap-6' >
