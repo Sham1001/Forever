@@ -13,7 +13,7 @@ import Navbar from './Component/Navbar'
 import Footer from './Component/Footer.jsx'
 import { ToastContainer, toast } from 'react-toastify';
 import { ShopContext } from './Context/ShopContext.jsx'
-import Verify from './Pages/verify.jsx'
+import Verify from './Pages/Verify.jsx'
 // import SearchBar from './Component/SearchBar.jsx'
 
 
