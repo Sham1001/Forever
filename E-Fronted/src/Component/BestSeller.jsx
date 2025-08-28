@@ -17,7 +17,9 @@ const BestSeller = () => {
   return (
     <div className='space-y-8'>
       <div className='text-center'>
+        <div className='text-4xl'>
         <Title text1={'BEST'} text2={'SELLER'}/>
+        </div>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, odio.</p>
       </div>
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-10'>

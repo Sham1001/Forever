@@ -19,7 +19,7 @@ const Orders = () => {
               item['status'] = order.status
               item['payment'] = order.payment
               item['method'] = order.method
-              item['data'] = order.data
+              item['date'] = order.date
               allOrder.push(item)
             })
           })

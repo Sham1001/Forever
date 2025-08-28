@@ -16,7 +16,7 @@ const Order = ({ token }) => {
           { headers: { token } }
         )
         if (response.data.success) {
-          setOrders(response.data.order)
+          setOrders(response.data.order.reverse())
         } else {
           toast.error(response.data.message)
         }

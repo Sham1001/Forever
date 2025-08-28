@@ -99,9 +99,9 @@ const Collection = () => {
     
     <div className='flex flex-col sm:flex-row gap-20 pt-10'>
       <div className=''>
-        <div className={`flex  gap-2 ${isHidden ? 'gap-3' : ''} `}>
+        <div onClick={()=>setIsHidden(!isHidden)} className={`flex  gap-2 ${isHidden ? 'gap-3' : ''} `}>
         <p className='pb-6 text-lg'>FILTERS</p>
-         <img onClick={()=>setIsHidden(!isHidden)} className={`h-5 w-2 pt-2 sm:hidden ${isHidden ? 'rotate-90 ' : ''}   `}  src={assets.dropdown_icon} alt="" />
+         <img className={`h-5 w-2 pt-2 sm:hidden ${isHidden ? 'rotate-90 ' : ''}   `}  src={assets.dropdown_icon} alt="" />
          </div>
        
         <div className={`flex flex-col ${isHidden ? '' : 'hidden'} sm:block sm:space-y-5 gap-6`}>
@@ -141,7 +141,7 @@ const Collection = () => {
       <div className='flex flex-col gap-4'>
         <div className='flex flex-row justify-between sm:gap-133'>
         <div className='inline-flex items-center mb-2 gap-2'>
-          <p className='text-2xl  text-gray-400'> ALL<span className='font-medium ml-2 text-gray-700'>COLLECTION</span></p>
+          <p className='sm:text-2xl text-lg   text-gray-400'> ALL<span className='sm:font-medium ml-2 text-gray-700'>COLLECTION</span></p>
           <p className='w-8 sm:w-11 h-[1px] sm:h-[2px] bg-gray-700'></p>
         </div>
         <select onChange={(e)=>setSortType(e.target.value)} className='border text-sm text-gray-700 rounded-2xl px-2'>

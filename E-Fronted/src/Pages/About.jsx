@@ -7,12 +7,12 @@ const About = () => {
   return (
     <div className='mt-[60px]'>
       <div className=''>
-        <div className='flex justify-center'>
+        <div className='flex justify-center text-3xl'>
           <Title text1={'ABOUT'} text2={'US'}/>
         </div>
         <div className='flex flex-col sm:flex-row justify-around gap-[60px] m-10'>
           <img className='w-full sm:w-2/5' src={assets.about_img} alt="" />
-          <div className='flex flex-col gap-7 py-5'>
+          <div className='flex flex-col gap-7 py-5 '>
             <p className='text-lg text-gray-600'>
                 Forever was born out of a passion for innovation and a desire to revolutionize 
                 the way people shop online. Our journey began with a simple idea: to provide a 

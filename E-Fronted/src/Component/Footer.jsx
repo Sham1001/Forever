@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div>
         <div className='flex flex-col sm:flex-row gap-20 sm:gap-90 pt-40 pb-10 '>
-            <div className=' w-100 flex flex-col gap-5 '>
+            <div className='flex flex-col gap-5 '>
             <img className='w-42' src={assets.logo} alt="" />
             <p className='text-sm text-gray-600'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque alias optio sapiente natus accusamus soluta velit voluptatum nesciunt necessitatibus placeat?</p>
             </div>
@@ -17,6 +17,7 @@ const Footer = () => {
                     <li>About us</li>
                     <li>Delivery</li>
                     <li>Privacy Policy</li>
+                   
                 </ul>
                  </div>
                  <div className='flex flex-col gap-5 ' >

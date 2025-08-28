@@ -13,6 +13,7 @@ import Navbar from './Component/Navbar'
 import Footer from './Component/Footer.jsx'
 import { ToastContainer, toast } from 'react-toastify';
 import { ShopContext } from './Context/ShopContext.jsx'
+import Verify from './Pages/verify.jsx'
 // import SearchBar from './Component/SearchBar.jsx'
 
 
@@ -36,6 +37,7 @@ const App = () => {
         <Route path='/Order' element={<Orders/>}/>
         <Route path='/placeorder' element={<PlaceOrder/>}/>
         <Route path='cart' element={<Cart/>}/>
+        <Route path='verify' element={<Verify/>}/>
         
       </Routes>
        <Footer/>
